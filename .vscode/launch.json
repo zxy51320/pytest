@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Pytest",
+            "type": "python",
+            "request": "launch",
+            "module": "pytest",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "-v", //将用例的详细信息打印到控制台，包括测试用例的名称、模块、执行时间等。
+                "-x", //遇到第一个失败的用例后停止执行
+                "-s", //打印输出在控制台中
+                "-m login or group", //只执行指定标记的用例
+                //"${relativeFile}", //在VSCode中将当前打开文件的相对路径传递给pytest，以便运行特定测试文件
+            ],
+        }
+    ]
+}

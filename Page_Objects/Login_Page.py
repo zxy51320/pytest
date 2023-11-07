@@ -11,6 +11,9 @@ class LoginPage(BasePage):
     user_icon = "//ion-avatar[@class='padded-avatar md hydrated']"
     logout = "//ion-label[@class='sc-ion-label-md-h sc-ion-label-md-s md hydrated' and text()='Logout']"
 
+    def __init__(self,driver):
+        super().__init__(driver)
+        
     def _login(self, usr, pwd):
         self.input_text((By.NAME,self.username_input), text=usr)
         self.scroll_to(By.NAME,self.pwd_input)
@@ -18,8 +21,8 @@ class LoginPage(BasePage):
         self.click((By.XPATH,self.login_btn))
 
     def _login_result(self):
-        result = self.check_url(self.main_page)
-        return result
+        __result = self.check_url(self.main_page)
+        return __result
         
     def _logout(self):
         self.click((By.XPATH,self.user_icon))

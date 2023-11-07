@@ -10,6 +10,7 @@ class TestLogin():
         driver.get(TestData.URL['url_login'])
         return driver
     
+    @pytest.mark.login
     def test_login_pass(self):
         self.page._login(TestData.USERNAME['urs_login1'][0],TestData.USERNAME['urs_login1'][1])
         result = self.page._login_result()
@@ -22,5 +23,3 @@ class TestLogin():
         result = self.page._login_result()
         assert result == False
  
-if __name__ == "__main__":
-    pytest.main(["-s", "tc1_Login.py"])

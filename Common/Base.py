@@ -9,23 +9,26 @@ class BasePage():
         self.driver = driver
         self.wait = WebDriverWait(driver, 3)
 
+    def getElement_list(self, *loc):
+        __element_list = self.driver.find_elements(*loc)
+        return __element_list
 
     def input_text(self, *loc, text):
-        element = self.wait.until(EC.element_to_be_clickable(*loc))
-        element.send_keys(text)
+        __element = self.wait.until(EC.element_to_be_clickable(*loc))
+        __element.send_keys(text)
 
     def scroll_to(self, *loc):
-        element = self.driver.find_element(*loc)
-        self.driver.execute_script("arguments[0].scrollIntoView();", element)
+        __element = self.driver.find_element(*loc)
+        self.driver.execute_script("arguments[0].scrollIntoView();", __element)
         time.sleep(1)
 
     def click(self, *loc):
-        element = self.wait.until(EC.element_to_be_clickable(*loc))
-        element.click()
+        __element = self.wait.until(EC.element_to_be_clickable(*loc))
+        __element.click()
 
     def get_text(self, *loc):
-        text = self.wait.until(EC.presence_of_element_located(*loc)).text
-        return text
+        __text = self.wait.until(EC.presence_of_element_located(*loc)).text
+        return __text
     
     def check_url(self,content):
         try:
