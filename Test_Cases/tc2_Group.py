@@ -18,6 +18,6 @@ class TestGroup():
         tagline = 'tagline' + f'{str(datetime.now())[-6:]}'
         self.page.creat_group(name,descp,tagline)
         result_list = self.page.get_group_search_result(name)
-        result = self.page.verify_group_search_result(result_list,name,tagline)
+        result = self.page.verify_group_search_result(result_list,name,tagline,descp)
         assert result == True
         

@@ -7,6 +7,12 @@ class TestData():
     }
 
     USERNAME = {
-        'urs_login1' : ['zxy51320@gmail.com','5841314520'],
-        'urs_login2' : ['zxy51321@gmail.com','5841314520']
+        'usr_login1' : ['zxy51320@gmail.com','5841314520'],
+        'usr_login2' : ['zxy51321@gmail.com','5841314520']
+    }
+    
+    NAME = {
+        'usr0' : '酱爆肥猪肉',
+        'usr1' : '酱爆',
+        'usr2' : '肥猪肉'
     }

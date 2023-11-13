@@ -12,6 +12,13 @@ class BasePage():
     def getElement_list(self, *loc):
         __element_list = self.driver.find_elements(*loc)
         return __element_list
+    
+    def ifElementExist(self, *loc):
+        try:
+            self.driver.find_element(*loc)
+            return True
+        except NoSuchElementException:
+            return False
 
     def input_text(self, *loc, text):
         __element = self.wait.until(EC.element_to_be_clickable(*loc))
